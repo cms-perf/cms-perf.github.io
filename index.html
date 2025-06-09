@@ -27,26 +27,6 @@
       height: 100%;
     }
 
-    .carousel {
-      position: fixed;
-      top: 90px;
-      left: 0;
-      width: 100vw;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .carousel img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    .carousel img.active {
-      opacity: 1;
-      z-index: 1;
-    }
-
     .content-section {
       opacity: 0;
       display: none;
@@ -74,8 +54,9 @@
 
     .header-img {
       position: center;
-      width: 35%;
+      width: auto;
       height: auto;
+      max-height: 120px;
       object-fit: scale-down;
     }
 
@@ -91,39 +72,51 @@
 </head>
 
 <body class="bg-white-800 text-gray-300 relative min-h-screen flex">
-  <div class="carousel">
-    <img src="background.jpg" alt="Claude on a motorcycle circa 1981-1983" class="active" />
-  </div>
-
   <div class="flex-1 flex flex-col">
     <header class="bg-ontario-green py-6 flex flex-col items-center justify-center">
       <img class="header-img" src="logo.PNG">
     </header>
 
     <main class="flex-1 max-w-4xl mx-auto p-4 w-full">
-      <section id="contact" class="content-section active content-bg">
-        <h2 class="text-2xl font-bold mb-2">Contact</h2>
-        <p class="mt-2">
-          <strong>Phone:</strong><br>
-          <a href="tel:16134432500" class="underline text-red-400">613-443-2500</a>
-        </p>
-        <p class="mt-2">
-          <strong>Email:</strong><br>
-          <a href="mailto:cmsperf@proton.me">cmsperf@proton.me</a>
-        </p>
-        <p class="mt-2">
-          <strong>Shop Address:</strong><br>
-          CMS - Claude's Motorcycle Service<br>
-          682 Montcalm, Casselman, ON<br>
-          K0A 1M0
-        </p>
-        <p class="mt-2">
-          <strong>Postal Address:</strong><br>
-          PO Box 211<br>
-          St-Albert, ON<br>
-          K0A 3C0
-        </p>
-        <div class="mt-4">
+      <section id="contact" class="content-section content-bg text-gray-300 active">
+
+
+        <!-- Two-column layout -->
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Left column: Contact info -->
+          <div class="flex-1 space-y-4">
+            <h2 class="text-2xl font-bold mb-4">Contact</h2>
+            <p>
+              <strong>Phone:</strong><br>
+              <a href="tel:16134432500" class="underline text-red-400">613-443-2500</a>
+            </p>
+            <p>
+              <strong>Email:</strong><br>
+              <a href="mailto:cmsperf@proton.me" class="underline text-red-400">cmsperf@proton.me</a>
+            </p>
+            <p>
+              <strong>Shop Address:</strong><br>
+              CMS - Claude's Motorcycle Service<br>
+              682 Montcalm, Casselman, ON<br>
+              K0A 1M0
+            </p>
+            <p>
+              <strong>Postal Address:</strong><br>
+              PO Box 211<br>
+              St-Albert, ON<br>
+              K0A 3C0
+            </p>
+          </div>
+
+          <!-- Right column: Image -->
+          <div class="flex-1">
+            <img src="background.jpg" alt="Claude on a motorcycle"
+              class="w-full h-auto rounded shadow-lg object-contain" />
+          </div>
+        </div>
+
+        <!-- Full-width map below -->
+        <div class="mt-8">
           <iframe class="w-full h-64 rounded shadow-lg"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2797.956260697216!2d-75.08178968444044!3d45.3071249790994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccdfab4a1d1c6cb%3A0x4b507b9cf61a6c35!2s682%20Montcalm%20St%2C%20Casselman%2C%20ON%20K0A%201M0!5e0!3m2!1sen!2sca!4v1717597075822!5m2!1sen!2sca"
             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
